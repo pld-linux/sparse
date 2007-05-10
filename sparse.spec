@@ -1,4 +1,5 @@
-Summary:	Sparse is a semantic parser of source files
+Summary:	Sparse - a semantic parser of source files
+Summary(pl.UTF-8):	Sparse - analizator semantyczny plików źródlowych
 Name:		sparse
 Version:	0.3
 Release:	1
@@ -6,6 +7,7 @@ License:	GPL
 Group:		Development/Debuggers
 Source0:	http://kernel.org/pub/software/devel/sparse/dist/%{name}-%{version}.tar.gz
 # Source0-md5:	daa548bb52f64f00498ad646e5786c0a
+URL:		http://kernel.org/pub/software/devel/sparse/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -21,6 +23,19 @@ analysis. It's not a tokenizer, nor is it some generic context-free
 parser. In fact, context (semantics) is what it's all about - figuring
 out not just what the grouping of tokens are, but what the _types_ are
 that the grouping implies.
+
+%description -l pl.UTF-8
+Sparse to analizator semantyczny plików źródłowych - nie jest to ani
+kompilator (choć mógłby być używany jako frontend dla niego) ani
+preprocesor (choć zawiera jako część fazę preprocesingu).
+
+Sparse ma być małą i prostą biblioteką. Ledwie wystarczającą i
+niewielką, i po części dlatego łatwą w użyciu. Ma jedno zadanie:
+utworzyć drzewo semantyczne analizy do dowolnego późniejszego
+wykorzystania. Nie jest to tokenizer ani żaden ogólny analizator
+bezkontekstowy. Właściwie kontekst (semantyka) to wszystko co
+istotne - przedstawianie nie tylko czym są grupowane tokeny, ale tego,
+czym są _typy_ obejmowane przez grupowanie.
 
 %prep
 %setup -q
