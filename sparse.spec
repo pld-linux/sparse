@@ -1,12 +1,12 @@
 Summary:	Sparse - a semantic parser of source files
 Summary(pl.UTF-8):	Sparse - analizator semantyczny plików źródlowych
 Name:		sparse
-Version:	0.3
+Version:	0.4
 Release:	1
 License:	GPL
 Group:		Development/Debuggers
 Source0:	http://kernel.org/pub/software/devel/sparse/dist/%{name}-%{version}.tar.gz
-# Source0-md5:	daa548bb52f64f00498ad646e5786c0a
+# Source0-md5:	dedd6043e7665ab134c20a45ecbc030c
 URL:		http://kernel.org/pub/software/devel/sparse/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -44,13 +44,16 @@ czym są _typy_ obejmowane przez grupowanie.
 %{__make} \
 	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags} -fpic" \
-	LDFLAGS="%{rpmldflags}"
+	LDFLAGS="%{rpmldflags}" \
+	PREFIX="%{_prefix}" \
+	LIBDIR="%{_libdir}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	PREFIX="%{_prefix}" \
+	LIBDIR="%{_libdir}" \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
@@ -63,3 +66,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/%{name}
 %{_libdir}/*.a
 %{_pkgconfigdir}/*.pc
+%{_mandir}/man1/*
