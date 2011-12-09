@@ -1,12 +1,12 @@
 Summary:	Sparse - a semantic parser of source files
-Summary(pl.UTF-8):	Sparse - analizator semantyczny plików źródlowych
+Summary(pl.UTF-8):	Sparse - analizator semantyczny plików źródłowych
 Name:		sparse
-Version:	0.4.1
+Version:	0.4.4
 Release:	1
-License:	GPL
+License:	OSL v1.1
 Group:		Development/Debuggers
-Source0:	http://kernel.org/pub/software/devel/sparse/dist/%{name}-%{version}.tar.gz
-# Source0-md5:	c41098155b4a63f731f765f4630cbef9
+Source0:	http://kernel.org/pub/software/devel/sparse/dist/%{name}-%{version}.tar.bz2
+# Source0-md5:	89275763315c242b38791f8845a70ba0
 URL:		http://kernel.org/pub/software/devel/sparse/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -62,8 +62,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc FAQ LICENSE README
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/c2xml
+%attr(755,root,root) %{_bindir}/cgcc
+%attr(755,root,root) %{_bindir}/sparse
+%attr(755,root,root) %{_bindir}/test-inspect
 %{_includedir}/%{name}
-%{_libdir}/*.a
-%{_pkgconfigdir}/*.pc
-%{_mandir}/man1/*
+%{_libdir}/libsparse.a
+%{_pkgconfigdir}/sparse.pc
+%{_mandir}/man1/cgcc.1*
+%{_mandir}/man1/sparse.1*
