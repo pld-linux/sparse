@@ -1,13 +1,19 @@
 Summary:	Sparse - a semantic parser of source files
 Summary(pl.UTF-8):	Sparse - analizator semantyczny plików źródłowych
 Name:		sparse
-Version:	0.4.4
-Release:	2
+Version:	0.5.0
+Release:	1
 License:	OSL v1.1
 Group:		Development/Debuggers
-Source0:	http://kernel.org/pub/software/devel/sparse/dist/%{name}-%{version}.tar.bz2
-# Source0-md5:	89275763315c242b38791f8845a70ba0
-URL:		http://kernel.org/pub/software/devel/sparse/
+Source0:	https://kernel.org/pub/software/devel/sparse/dist/%{name}-%{version}.tar.xz
+# Source0-md5:	68bc834c57836251fbee55a7707bab39
+URL:		https://kernel.org/pub/software/devel/sparse/
+BuildRequires:	gtk+2-devel >= 2.0
+BuildRequires:	libxml2-devel >= 2.0
+BuildRequires:	llvm-devel >= 3.0
+BuildRequires:	pkgconfig
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -46,7 +52,8 @@ czym są _typy_ obejmowane przez grupowanie.
 	CFLAGS="%{rpmcflags} -fpic" \
 	LDFLAGS="%{rpmldflags}" \
 	PREFIX="%{_prefix}" \
-	LIBDIR="%{_libdir}"
+	LIBDIR="%{_libdir}" \
+	V=1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -65,6 +72,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/c2xml
 %attr(755,root,root) %{_bindir}/cgcc
 %attr(755,root,root) %{_bindir}/sparse
+%attr(755,root,root) %{_bindir}/sparse-llvm
+%attr(755,root,root) %{_bindir}/sparsec
 %attr(755,root,root) %{_bindir}/test-inspect
 %{_includedir}/%{name}
 %{_libdir}/libsparse.a
