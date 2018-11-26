@@ -1,0 +1,11 @@
+--- sparse-0.5.2/Makefile.orig	2018-04-13 17:15:41.000000000 +0200
++++ sparse-0.5.2/Makefile	2018-11-26 20:14:30.999238925 +0100
+@@ -90,7 +90,7 @@
+ endif
+ 
+ ifeq ($(HAVE_LLVM),yes)
+-ifeq ($(shell uname -m | grep -q '\(i386\|x86\)' && echo ok),ok)
++ifeq ($(shell uname -m | grep -q '\(i[3456]86\|x86\)' && echo ok),ok)
+ LLVM_VERSION:=$(shell $(LLVM_CONFIG) --version)
+ ifeq ($(shell expr "$(LLVM_VERSION)" : '[3-9]\.'),2)
+ LLVM_PROGS := sparse-llvm

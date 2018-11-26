@@ -1,14 +1,15 @@
 Summary:	Sparse - a semantic parser of source files
 Summary(pl.UTF-8):	Sparse - analizator semantyczny plików źródłowych
 Name:		sparse
-Version:	0.5.0
+Version:	0.5.2
 Release:	1
 License:	OSL v1.1
 Group:		Development/Debuggers
-Source0:	https://kernel.org/pub/software/devel/sparse/dist/%{name}-%{version}.tar.xz
-# Source0-md5:	68bc834c57836251fbee55a7707bab39
-URL:		https://kernel.org/pub/software/devel/sparse/
-BuildRequires:	gtk+2-devel >= 2.0
+Source0:	https://www.kernel.org/pub/software/devel/sparse/dist/%{name}-%{version}.tar.xz
+# Source0-md5:	1eeec1b3cd53caedfad6175df4fa87a6
+Patch0:		%{name}-llvm.patch
+URL:		https://www.kernel.org/pub/software/devel/sparse/
+BuildRequires:	gtk+3-devel >= 3.0
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	llvm-devel >= 3.0
 BuildRequires:	pkgconfig
@@ -45,6 +46,7 @@ czym są _typy_ obejmowane przez grupowanie.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__make} \
