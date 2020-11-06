@@ -1,12 +1,12 @@
 Summary:	Sparse - a semantic parser of source files
 Summary(pl.UTF-8):	Sparse - analizator semantyczny plików źródłowych
 Name:		sparse
-Version:	0.6.2
+Version:	0.6.3
 Release:	1
 License:	OSL v1.1
 Group:		Development/Debuggers
 Source0:	https://www.kernel.org/pub/software/devel/sparse/dist/%{name}-%{version}.tar.xz
-# Source0-md5:	b4f4ed24f2ef21d42e1142d587a1555a
+# Source0-md5:	5eeca38d842b0e715e91111d7a975fb0
 URL:		https://www.kernel.org/pub/software/devel/sparse/
 BuildRequires:	gtk+3-devel >= 3.0
 BuildRequires:	libxml2-devel >= 2.0
@@ -71,11 +71,11 @@ rm -rf $RPM_BUILD_ROOT
 %doc FAQ LICENSE README
 %attr(755,root,root) %{_bindir}/c2xml
 %attr(755,root,root) %{_bindir}/cgcc
-%attr(755,root,root) %{_bindir}/sindex
+%attr(755,root,root) %{_bindir}/semind
 %attr(755,root,root) %{_bindir}/sparse
 %attr(755,root,root) %{_bindir}/sparse-llvm
 %attr(755,root,root) %{_bindir}/sparsec
 %attr(755,root,root) %{_bindir}/test-inspect
 %{_mandir}/man1/cgcc.1*
-%{_mandir}/man1/sindex.1*
+%{_mandir}/man1/semind.1*
 %{_mandir}/man1/sparse.1*
