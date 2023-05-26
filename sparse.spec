@@ -7,6 +7,7 @@ License:	OSL v1.1
 Group:		Development/Debuggers
 Source0:	https://www.kernel.org/pub/software/devel/sparse/dist/%{name}-%{version}.tar.xz
 # Source0-md5:	297257cc3c08a3e1fcea03aa660a896c
+Patch0:		llvm-15.diff
 URL:		https://www.kernel.org/pub/software/devel/sparse/
 BuildRequires:	gtk+3-devel >= 3.0
 BuildRequires:	libxml2-devel >= 2.0
@@ -45,6 +46,7 @@ czym są _typy_ obejmowane przez grupowanie.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__make} \
