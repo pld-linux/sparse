@@ -2,7 +2,7 @@ Summary:	Sparse - a semantic parser of source files
 Summary(pl.UTF-8):	Sparse - analizator semantyczny plików źródłowych
 Name:		sparse
 Version:	0.6.4
-Release:	6
+Release:	7
 License:	OSL v1.1
 Group:		Development/Debuggers
 Source0:	https://www.kernel.org/pub/software/devel/sparse/dist/%{name}-%{version}.tar.xz
