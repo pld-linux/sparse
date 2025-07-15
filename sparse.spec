@@ -46,7 +46,7 @@ czym są _typy_ obejmowane przez grupowanie.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__make} \
